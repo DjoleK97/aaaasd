@@ -8,7 +8,7 @@ export default function Select({ label, value, onChange, options }) {
                 {
                     options.map(o => {
                         return (
-                            <option value={o.value} key={o.value}>{o.label}</option>
+                            <option value={o.name} key={o.name}>{o.label}</option>
                         )
                     })
                 }
