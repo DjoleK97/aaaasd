@@ -1,13 +1,11 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import axios from 'axios';
 import { useState } from 'react';
 import DataStructurePage from './pages/DataStructurePage';
 import DataPage from './pages/DataPage';
 import { generateStructure } from './api';
 import StatisticsPage from './pages/StatisticsPage';
-axios.defaults.baseURL = 'https://fakerapi.it/api/v1'
 function App() {
   const [dataStructure, setDataStructure] = useState([]);
   const [data, setData] = useState([]);

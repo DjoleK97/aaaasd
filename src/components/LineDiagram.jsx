@@ -3,16 +3,16 @@
 import React from 'react'
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 
-export default function LineDiagram({ data, groupingKey, valueKey }) {
+export default function LineDiagram({ data }) {
   return (
-    <ResponsiveContainer width='100%' aspect={4 / 3}>
+    <ResponsiveContainer width='100%' aspect={22 / 9}>
       <LineChart
         data={data}
       >
-        <XAxis dataKey={groupingKey} />
+        <XAxis dataKey='x' />
         <YAxis />
         <Tooltip />
-        <Line dataKey={valueKey} stroke="#8884d8" />
+        <Line dataKey='y' stroke="#8884d8" />
       </LineChart>
     </ResponsiveContainer>
   )

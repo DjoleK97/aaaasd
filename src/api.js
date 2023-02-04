@@ -7,7 +7,7 @@ export async function generateStructure(structure, total) {
     for (const element of structure) {
         params[element.name] = element.value;
     }
-    const res = await axios.get('/custom', {
+    const res = await axios.get('https://fakerapi.it/api/v1/custom', {
         params
     })
     return res.data.data;

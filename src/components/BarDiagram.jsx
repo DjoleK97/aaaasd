@@ -1,16 +1,16 @@
 import React from 'react'
 import { Bar, BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 
-export default function BarDiagram({ data, groupingKey, valueKey }) {
+export default function BarDiagram({ data }) {
     return (
-        <ResponsiveContainer width='100%' aspect={4 / 3}>
+        <ResponsiveContainer width='100%' aspect={22 / 9}>
             <BarChart
                 data={data}
             >
-                <XAxis dataKey={groupingKey} />
+                <XAxis dataKey='x' />
                 <YAxis />
                 <Tooltip />
-                <Bar dataKey={valueKey} fill="#8884d8" />
+                <Bar dataKey='y' fill="#8884d8" />
             </BarChart>
         </ResponsiveContainer>
     )

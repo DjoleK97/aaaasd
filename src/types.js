@@ -8,9 +8,6 @@ export const types = [
         name: 'company_name',
         label: 'Company name'
     }, {
-        name: 'company_name',
-        label: 'Company name'
-    }, {
         name: 'counter',
         label: 'Counter'
     }, {

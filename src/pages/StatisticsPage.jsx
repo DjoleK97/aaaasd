@@ -26,6 +26,27 @@ export default function StatisticsPage({
 
         )
     }
+    let parsedData = [];
+    if (selectedChartType && selectedGroupingFieldName && selectedMainField) {
+        const objMap = data.reduce((acc, obj) => {
+            if (!acc[obj[selectedGroupingFieldName]]) {
+                acc[obj[selectedGroupingFieldName]] = {
+                    sum: 0,
+                    count: 0
+                };
+            }
+            acc[obj[selectedGroupingFieldName]].sum += obj[selectedMainField];
+            acc[obj[selectedGroupingFieldName]].count++;
+            return acc;
+        }, {});
+        parsedData = Object.keys(objMap).map(key => {
+            return {
+                x: key,
+                y: objMap[key].sum / objMap[key].count
+            }
+        })
+    }
+
     return (
         <div className='container'>
             <div>
@@ -60,17 +81,17 @@ export default function StatisticsPage({
                     <>
                         {
                             selectedChartType === 'line' && (
-                                <LineDiagram data={data} groupingKey={selectedGroupingFieldName} valueKey={selectedMainField} />
+                                <LineDiagram data={parsedData} />
                             )
                         }
                         {
                             selectedChartType === 'area' && (
-                                <AreaDiagram data={data} groupingKey={selectedGroupingFieldName} valueKey={selectedMainField} />
+                                <AreaDiagram data={parsedData} />
                             )
                         }
                         {
                             selectedChartType === 'bar' && (
-                                <BarDiagram data={data} groupingKey={selectedGroupingFieldName} valueKey={selectedMainField} />
+                                <BarDiagram data={parsedData} />
                             )
                         }
                     </>
