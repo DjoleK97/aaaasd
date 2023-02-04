@@ -44,3 +44,18 @@ export const types = [
 ]
 
 export const numberFields = ['number', 'counter']
+
+export const chartTypes = [
+    {
+        name: 'line',
+        label: 'Line chart'
+    },
+    {
+        name: 'area',
+        label: 'Area chart'
+    },
+    {
+        name: 'bar',
+        label: 'Bar chart'
+    }
+]

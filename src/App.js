@@ -6,6 +6,7 @@ import { useState } from 'react';
 import DataStructurePage from './pages/DataStructurePage';
 import DataPage from './pages/DataPage';
 import { generateStructure } from './api';
+import StatisticsPage from './pages/StatisticsPage';
 axios.defaults.baseURL = 'https://fakerapi.it/api/v1'
 function App() {
   const [dataStructure, setDataStructure] = useState([]);
@@ -31,7 +32,7 @@ function App() {
             })
           }}
         />} />
-        <Route path='/statistics' element={<div></div>} />
+        <Route path='/statistics' element={<StatisticsPage data={data} dataStructure={dataStructure} />} />
       </Routes>
     </BrowserRouter>
   );

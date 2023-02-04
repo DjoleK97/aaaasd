@@ -5,6 +5,7 @@ export default function Select({ label, value, onChange, options }) {
         <div className='form-group'>
             <label>{label}</label>
             <select type="text" className='form-control' value={value} onChange={e => onChange(e.currentTarget.value)}>
+                <option value="">Select...</option>
                 {
                     options.map(o => {
                         return (
