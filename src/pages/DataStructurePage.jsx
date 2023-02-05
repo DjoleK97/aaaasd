@@ -12,7 +12,7 @@ export default function DataStructurePage({
                 <button onClick={() => {
                     onChange(prev => [...prev, { name: '', value: '' }])
                 }} className='btn btn-primary'>
-                    Add
+                    Add field
                 </button>
             </div>
             <div>

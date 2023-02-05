@@ -6,6 +6,7 @@ import DataStructurePage from './pages/DataStructurePage';
 import DataPage from './pages/DataPage';
 import { generateStructure } from './api';
 import StatisticsPage from './pages/StatisticsPage';
+
 function App() {
   const [dataStructure, setDataStructure] = useState([]);
   const [data, setData] = useState([]);

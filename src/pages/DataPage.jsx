@@ -19,7 +19,7 @@ export default function DataPage({
                         onChange={val => {
                             const nVal = Number(val);
                             setTotal(prev => {
-                                if (val < 1 || val > 1000) {
+                                if (nVal < 1 || nVal > 1000) {
                                     return prev;
                                 }
                                 return nVal;
